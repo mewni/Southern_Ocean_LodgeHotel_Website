@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     $FirstName = $_REQUEST["firstName"];
     $LastName = $_REQUEST["lastName"];
     $Email = $_REQUEST["email"];
@@ -37,7 +40,8 @@
     
        //check weather it is success
        if ($result2 === TRUE) {
-           header("Location: login.html");// this will redirect to the login page
+           $_SESSION['userName'] = $Email;
+           header("Location: login.php");// this will redirect to the login page
            //so the user can login with their added details.
        } 
        else {
