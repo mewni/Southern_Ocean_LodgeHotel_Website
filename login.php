@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -27,6 +26,8 @@ if($result->num_rows>0){
 
 if($retrievedPassword == $userPassword && $retrievedUserName == $userUserName){
     #Password Works
+    session_start();
+    $_SESSION["UserID"] = md5($userUserName);
     header("Location: index.html");
 }
 else{
