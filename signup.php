@@ -1,5 +1,10 @@
 <?php
 
+    // start the user session 
+    session_start();
+
+    
+
     //created a function check whether there is a incoming value
     function getIfSet(&$value, $default = null)
     {
@@ -7,6 +12,9 @@
         return isset($value) ? $value : $default;
     }
     
+    //get the user name is valid
+    $userName = getIfSet($_SESSION['userName']);
+
     //assigned to tthe variable state
     $state = getIfSet($_REQUEST['st']);
 
