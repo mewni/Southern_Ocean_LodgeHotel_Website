@@ -1,92 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Open+Sans:ital,wght@0,400;1,700&family=Pacifico&display=swap');
-
 body {
-      overflow-x: hidden;
-      font-family: 'Lato', sans-serif;
-      color: Black;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    color: Black;
 }
 
+
 /*--- Navigation --*/
+
 .navbar {
-      text-transform: uppercase;
-      font-weight: 550;
-      font-size: .9rem;
-      letter-spacing: .1rem;
-      background-color: rgba(0, 0, 0, 0)!important; 
+    text-transform: uppercase;
+    font-weight: 550;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    /* background-color: rgba(0, 0, 0, 0.041)!important; */
+    background: linear-gradient(#000000a4, #00000027)!important;
 }
 
 .navbar-brand img {
-      height: 2rem;
+    height: 2rem;
 }
 
 .navbar-nav li {
-      padding-right: .7rem;
+    padding-right: .7rem;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-      color: white;
-      padding-top: .8rem;
+    color: white;
+    padding-top: .8rem;
 }
+
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link:hover {
-      color: #1ebba3;
-} 
+    color: #1ebba3;
+}
+
 
 /*--- Landing Page --*/
+
 .home-inner {
-      background-image: url(img/mert-kahveci-UsQw-5dO32Y-unsplash.jpg);
-}
-.caption {
-      width: 100%;
-      max-width: 100%;
-      position: absolute;
-      top: 30%;
-      z-index: 1;
-      color: white;
-      text-transform: uppercase;
-}
-.caption h1 {
-      font-size: 3.9rem;
-      text-transform: none;
-      font-family: 'Dancing Script', cursive;
-      font-family: 'Great Vibes', cursive;
-      font-family: 'Open Sans', sans-serif;
-      font-family: 'Pacifico', cursive;
-      font-weight: 500;
-      letter-spacing: .3rem;
-      text-shadow: .1rem .1rem .8rem black;
-      padding-bottom: 1.6rem;
-      padding-top: 0rem;
-      padding-right: 1rem;
-      padding-left: 1rem;
-}
-.caption h3 {
-      font-size: 2rem;
-      text-shadow: .1rem .1rem .5rem black;
-      padding-bottom: 1.6rem
-}
-.btn-lg {
-      border-width: medium;
-      border-radius: 2.5rem;
-      padding: .6rem 1.3rem;
-      font-size: 1.1rem;
+    background-image: url(img/mert-kahveci-UsQw-5dO32Y-unsplash.jpg);
 }
 
+.caption {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    color: white;
+    text-transform: uppercase;
+}
+
+.caption h1 {
+    font-size: 3.9rem;
+    text-transform: none;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pacifico', cursive;
+    font-weight: 500;
+    letter-spacing: .3rem;
+    text-shadow: .1rem .1rem .8rem black;
+    padding-bottom: 1.6rem;
+    padding-top: 0rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.caption h3 {
+    font-size: 2rem;
+    text-shadow: .1rem .1rem .5rem black;
+    padding-bottom: 1.6rem
+}
+
+.btn-lg {
+    border-width: medium;
+    border-radius: 2.5rem;
+    padding: .6rem 1.3rem;
+    font-size: 1.1rem;
+}
+
+
 /*--- About Us --*/
+
 .fixed {
-      background-image: url(img/mert-kahveci-UsQw-5dO32Y-unsplash.jpg);
-      z-index: -1;
+    background-image: url(img/mert-kahveci-UsQw-5dO32Y-unsplash.jpg);
+    z-index: -1;
 }
+
 .dark {
-      background-color: rgba(0, 0, 0, 0.35);
-      color: white;
-      padding: 7rem 2rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: white;
+    padding: 7rem 2rem;
 }
+
 .fixed-background h3 {
-      margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
+
 .fixed-background p {
-      margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
