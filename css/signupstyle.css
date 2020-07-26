@@ -1,105 +1,51 @@
-    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Open+Sans:ital,wght@0,400;1,700&family=Pacifico&display=swap');
-    /* set entire body that is webpage */
-    
-    body {
-        background: rgb(14, 24, 37);
-        font-family: 'Lato', sans-serif;
-        color: rgb(154, 115, 76);
-        padding-top: 5vh;
-    }
-    /* set form background colour*/
-    
-    form {
-        background: rgb(14, 24, 37);
-    }
-    /* set padding and size of th form */
-    
-    .form-container {
-        border-radius: 10px;
-        padding: 50px;
-    }
-    /* Submit Button */
-    
-    .btn-sm {
-        color: rgb(154, 115, 76);
-        border-width: medium;
-        border-radius: 2.5rem;
-        padding: .6rem 1.3rem;
-        font-size: 1.1rem;
-    }
-    
-    .btn-outline-light {}
-    
-    #hotelname {
-        font-size: 1.5rem;
-        text-transform: none;
-        font-family: 'Dancing Script', cursive;
-        font-family: 'Great Vibes', cursive;
-        font-family: 'Open Sans', sans-serif;
-        font-family: 'Pacifico', cursive;
-        font-weight: 500;
-        letter-spacing: .3rem;
-        text-shadow: .1rem .1rem .8rem black;
-        padding-bottom: 1.6rem;
-        padding-top: 0rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-    
-    .form-footer {
-        padding-top: 1rem;
-        text-align: center;
-    }
-    
-    .progressbar-back {
-        margin-top: 5px;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        -ms-border-radius: 2px;
-        -o-border-radius: 2px;
-        color: #000!important;
-        background-color: #f1f1f1!important;
-    }
-    
-    .progress-inner {
-        transition: 0.3s;
-        font-size: 2px;
-        margin-top: 5px;
-        border-radius: 16px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        -ms-border-radius: 2px;
-        -o-border-radius: 2px;
-        padding: 0.01em, 5px;
-        background-color: blueviolet !important;
-    }
-    
-    .progress-inner:after,
-    .progress-inner:before {
-        content: "";
-        display: table;
-        clear: both
-    }
-    
-    .valid {
-        color: green;
-    }
-    
-    .valid:before {
-        position: relative;
-        left: -35px;
-        content: "✔";
-    }
-    /* Add a red text color and an "x" when the requirements are wrong */
-    
-    .invalid {
-        color: red;
-    }
-    
-    .invalid:before {
-        position: relative;
-        left: -35px;
-        content: "✖";
-    }
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Open+Sans:ital,wght@0,400;1,700&family=Pacifico&display=swap');
+
+/* set entire body that is webpage */
+body{
+      background: rgb(14, 24, 37);
+      font-family: 'Lato', sans-serif;
+      color: rgb(154, 115, 76);
+      padding-top: 6vh;	
+}
+/* set form background colour*/
+form{
+	background: rgb(14, 24, 37);
+}
+/* set padding and size of th form */
+.form-container{
+	border-radius: 10px;
+	padding: 50px;
+}
+/* Submit Button */
+.btn-sm {
+      color: rgb(154, 115, 76);
+      border-width: medium;
+      border-radius: 2.5rem;
+      padding: .6rem 1.3rem;
+      font-size: 1.1rem;     
+}
+.btn-outline-light {
+      
+}
+
+#hotelname {
+      font-size: 1.5rem;
+      text-transform: none;
+      font-family: 'Dancing Script', cursive;
+      font-family: 'Great Vibes', cursive;
+      font-family: 'Open Sans', sans-serif;
+      font-family: 'Pacifico', cursive;
+      font-weight: 500;
+      letter-spacing: .3rem;
+      text-shadow: .1rem .1rem .8rem black;
+      padding-bottom: 1.6rem;
+      padding-top: 0rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+}
+.form-footer {
+      padding-top: 1rem;
+      text-align: center;
+}
