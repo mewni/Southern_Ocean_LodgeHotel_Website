@@ -1,15 +1,21 @@
 ﻿<?php
 
-session_start();
+session_start();//start the session
 
+//this function is to get the value if it is pre setted
+//I created this code snipped to reduce time to type if(isset()) Everywhere.
 function getifSet(&$value, $default = null)
 {
+    //if it is set return the value, or else, return the default value
     return isset($value) ? $value : $default;
 }
 
+//set the username to a variable if it is set.
 $userName = getIfSet($_SESSION['userName']);
 
 ?>
+
+<!-- Starting the HTML Code -->
 <!doctype html>
 <html lang="en">
 
@@ -57,6 +63,8 @@ $userName = getIfSet($_SESSION['userName']);
     </section>
     <!-- Login form creation ends -->
 
+
+    <!-- The script below Checks whether it is on a session and it automatically fills the user email -->
     <script>
         var preset = "<?php echo $userName ?>";
         var txtEmail = document.getElementById("InputEmail");
