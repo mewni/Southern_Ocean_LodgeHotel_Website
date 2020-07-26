@@ -31,6 +31,7 @@ form{
 }
 
 #hotelname {
+      color: rgb(154, 115, 76);
       font-size: 1.5rem;
       text-transform: none;
       font-family: 'Dancing Script', cursive;
