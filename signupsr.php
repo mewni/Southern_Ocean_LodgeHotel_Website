@@ -33,9 +33,10 @@
 
     if($valid)
     {
+        $encPsw = md5($psw);
         echo "Email Ok";
         //the sql quary
-        $qry2 = "INSERT INTO userData (FirstName, LastName, Email, Password) VALUES('".$FirstName ."', '".$LastName."', '".$Email."', '".$psw."')";
+        $qry2 = "INSERT INTO userData (FirstName, LastName, Email, Password) VALUES('".$FirstName ."', '".$LastName."', '".$Email."', '".$encPsw."')";
         $result2 = $con->query($qry2); //Execute the quary
     
        //check weather it is success
