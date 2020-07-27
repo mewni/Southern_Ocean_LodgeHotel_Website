@@ -1,7 +1,6 @@
 ﻿<?php
-
 session_start();//start the session
-
+$sessionExp = 15;
 //this function is to get the value if it is pre setted
 //I created this code snipped to reduce time to type if(isset()) Everywhere.
 function getifSet(&$value, $default = null)
@@ -10,9 +9,21 @@ function getifSet(&$value, $default = null)
     return isset($value) ? $value : $default;
 }
 
+if(isset($_SESSION['Last_Activity']))
+{
+    $inactiveSeconds = time() - $_SESSION['Last_Activity'];
+    $sessionExpSec = $sessionExp * 60;
+
+    if($inactiveSeconds >= $sessionExpSec){
+        session_unset();
+        session_destroy();
+    }
+}
+
+
 //set the username to a variable if it is set.
 $userName = getIfSet($_SESSION['userName']);
-
+$_SESSION['Last_Activity'] = time();
 ?>
 
 <!-- Starting the HTML Code -->
