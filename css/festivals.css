@@ -43,27 +43,28 @@ body {
       color: white;
       
 }
-.caption h1 {
+.caption h3 {
       color: rgb(154, 115, 76);
       font-size: 3.9rem;
-      text-transform: none;
-      font-family: 'Dancing Script', cursive;
+      text-transform: uppercase;
+      /*font-family: 'Dancing Script', cursive;
       font-family: 'Great Vibes', cursive;
       font-family: 'Open Sans', sans-serif;
-      font-family: 'Pacifico', cursive;
+      font-family: 'Pacifico', cursive;*/
       font-weight: 500;
       letter-spacing: .3rem;
-      text-shadow: .1rem .1rem .8rem rgb(154, 115, 76);
+      /*text-shadow: .1rem .1rem .8rem rgb(154, 115, 76);*/
       padding-bottom: 0rem;
       padding-top: 0rem;
       padding-right: 1rem;
       padding-left: 1rem;
 }
-.caption h4 {
+.caption h5 {
       color: rgb(14, 24, 37);
       padding-top: 2rem;
       padding-right: 1rem;
       padding-left: 1rem;
+      /*padding-bottom: 8rem;*/
 }
 .container p {
       color: black;
@@ -73,7 +74,11 @@ body {
       margin-left: 1rem;
       margin-right: 1rem;
 }
+.btn-group {
+      padding-top: 2rem;
+      padding-bottom: 5rem;
 
+}
 .btn {
       background-color: rgb(154, 115, 76);
       border-radius: 1rem;
