@@ -86,6 +86,11 @@ $_SESSION['Last_Activity'] = time();
             document.getElementById("txtpsw").focus();
         }
 
+        if(txtEmail.value == "")
+        {
+            txtEmail.style.backgroundColor = "#ffffff";
+        }
+
         function emailChange() {
             txtEmail.style.backgroundColor = "#ffffff";
         }
