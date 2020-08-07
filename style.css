@@ -103,6 +103,7 @@ body {
 .fixed-background p {
     margin-top: 1.5rem;
 }
+
 /* Photogallery */
 #phtogallery {
     background-image: url(img/bao-menglong-b75FBg97dU0-unsplash.jpg);
@@ -281,4 +282,11 @@ body {
     margin-right:0;
     font-weight:600
   }
+=======
+
+@media only screen and (max-width: 700px) {
+    .navbar {
+        background: rgb(154, 115, 76)!important;
+    }
+
 }

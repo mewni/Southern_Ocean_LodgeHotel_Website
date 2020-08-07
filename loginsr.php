@@ -17,8 +17,11 @@ if($con->connect_error){
     die("Connection Failed: ". $con->connect_error);
 }
 
-$qry = "SELECT Email, Password FROM UserData";
+$qry = "SELECT Email, Password FROM UserData WHERE Email='".$retrievedUserName."'";
 $result = $con->query($qry);
+
+$userUserName;
+$userPassword;
 
 if($result->num_rows>0){
     while($row = $result->fetch_assoc()){
@@ -27,15 +30,15 @@ if($result->num_rows>0){
     }
 }
 
-if($retrievedPassword == $userPassword && $retrievedUserName == $userUserName){
+if(md5($retrievedPassword) == $userPassword && $retrievedUserName == $userUserName){
     #Password Works
     session_start();
     $_SESSION["userName"] = $userUserName;
-    header("Location: index.html");
+    header("Location:index.html");
 }
 else{
     #Login Unsuccessfull
-
+    echo "Login Unsuccessfull";
 }
 
 ?>
