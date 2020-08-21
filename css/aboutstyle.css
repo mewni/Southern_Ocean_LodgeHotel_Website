@@ -59,12 +59,12 @@ body {
   padding-right: 1rem;
   padding-left: 1rem;
 }
-.caption h5 {
+.caption h4 {
   color: rgb(14, 24, 37);
   padding-top: 2rem;
   padding-right: 1rem;
   padding-left: 1rem;
-  /*padding-bottom: 8rem;*/
+  padding-bottom: 8rem;
 }
 .container p {
       color: black;
