@@ -39,6 +39,7 @@ if(md5($retrievedPassword) == $userPassword && $retrievedUserName == $userUserNa
 else{
     #Login Unsuccessfull
     echo "Login Unsuccessfull";
+    header("Location:index.html");
 }
 
 ?>
