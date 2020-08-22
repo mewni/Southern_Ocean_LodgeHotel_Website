@@ -104,20 +104,19 @@ body {
     margin-top: 1.5rem;
 }
 
-/* Photogallery */
-#phtogallery {
-    background-image: url(img/bao-menglong-b75FBg97dU0-unsplash.jpg);
-    z-index: -1;
-}
-
-/* End Photogalley*/
-
 /* Facilities */
 #facilities {
-    background-color: #292C35;
+    background-image: url(img/hotel-1979406_1920.jpg);
 }
 
 /* End Facilities */
+
+/* Photogallery */
+#gallery {
+  background-image: url(img/kelly-sikkema-RCpEWDyC5sQ-unsplash.jpg);
+}
+
+/* End Photogalley*/
 
 /* Footer */
 .site-footer
