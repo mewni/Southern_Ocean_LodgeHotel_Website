@@ -50,7 +50,7 @@ $_SESSION['Last_Activity'] = time();
         <section class="row justify-content-center">
             <section class="col-12 col-sm-6 col-md-4">
 
-                <form class="form-container" action="loginsr.php" method="POST">
+                <form class="form-container" action="" method="POST">
                     <div class="form-group form-outline-light">
                         <h4 class="text-center font-weight-bold" id="hotelname"> Southern Ocean Lodge </h4>
                         <h4 class="text-center font-weight-bold"> Login </h4>
@@ -74,25 +74,7 @@ $_SESSION['Last_Activity'] = time();
     <!-- Login form creation ends -->
 
     <!-- The script below Checks whether it is on a session and it automatically fills the user email -->
-    <script>
-        var preset = "<?php echo $userName ?>";
-        var txtEmail = document.getElementById("InputEmail");
-
-        if (preset != null) {
-            txtEmail.value = preset;
-            txtEmail.style.backgroundColor = "#ffffcc";
-            document.getElementById("txtpsw").focus();
-        }
-
-        if(txtEmail.value == "")
-        {
-            txtEmail.style.backgroundColor = "#ffffff";
-        }
-
-        function emailChange() {
-            txtEmail.style.backgroundColor = "#ffffff";
-        }
-    </script>
+    <script src="js/loginScript.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
