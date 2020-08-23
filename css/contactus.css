@@ -6,12 +6,12 @@
 body{
       background:  rgb(14, 24, 37);
       font-family: 'Lato', sans-serif;
-      color:  rgb(14, 24, 37);
+      color:  rgb(154, 115, 76);
 	padding-top: 25vh;	
 }
 /* set form background colour*/
 form{
-	background: white;
+	background: rgb(14, 24, 37);
 }
 /* set padding and size of th form */
 .form-container{
@@ -25,9 +25,6 @@ form{
       border-radius: 2.5rem;
       padding: .6rem 1.3rem;
       font-size: 1.1rem;     
-}
-.btn-outline-light {
-      
 }
 
 #hotelname {
