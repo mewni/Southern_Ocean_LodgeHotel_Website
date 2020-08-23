@@ -7,7 +7,7 @@ body{
       background:  rgb(14, 24, 37);
       font-family: 'Lato', sans-serif;
       color:  rgb(154, 115, 76);
-	padding-top: 18vh;	
+	padding-top: 5vh;	
 }
 /* set form background colour*/
 form{
@@ -30,9 +30,7 @@ form{
       padding-right: 10rem;
    
 }
-.btn-outline-light {
-      
-}
+
 #borderradius {
       border-radius: 2.5rem;
 }
