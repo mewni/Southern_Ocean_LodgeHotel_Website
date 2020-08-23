@@ -86,7 +86,7 @@ body {
 /*--- About Us --*/
 
 .fixed {
-    background-image: url(img/mert-kahveci-UsQw-5dO32Y-unsplash.jpg);
+    background-image: url(img/yang-wewe-2tMsO8smcug-unsplash.jpg);
     z-index: -1;
 }
 
@@ -107,13 +107,15 @@ body {
 /* Facilities */
 #fixed2 {
     background-image: url(img/hotel-1979406_1920.jpg);
+    z-index: -1;
 }
 
 /* End Facilities */
 
 /* Photogallery */
-#gallery {
-  background-image: url(img/kelly-sikkema-RCpEWDyC5sQ-unsplash.jpg);
+#fixed3 {
+  background-image: url(img/victoria-priessnitz--JZFAKFaF7M-unsplash.jpg);
+  z-index: -1;
 }
 
 /* End Photogalley*/
