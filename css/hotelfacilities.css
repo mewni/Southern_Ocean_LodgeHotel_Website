@@ -10,6 +10,10 @@
       background: linear-gradient(#000000a4, #00000027)!important;
   }
   
+.nav-item {
+    cursor: pointer;
+}
+  
   .navbar-brand img {
       height: 2rem;
   }
