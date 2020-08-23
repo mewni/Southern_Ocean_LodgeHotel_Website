@@ -34,6 +34,8 @@ $pswdb = "";
 $db = "hoteldb";
 
 //variables
+$firstName = $_REQUEST['fname'];
+$lastName = $_REQUEST['lname'];
 $CheckInDate = "2020-09-12";
 $CheckOutDate = "2020-09-14";
 $Adults = "1";
