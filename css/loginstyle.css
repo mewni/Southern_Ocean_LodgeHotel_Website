@@ -6,12 +6,12 @@
 body{
       background:  rgb(14, 24, 37);
       font-family: 'Lato', sans-serif;
-      color:  rgb(14, 24, 37);
+      color: rgb(154, 115, 76);
 	padding-top: 25vh;	
 }
 /* set form background colour*/
 form{
-	background: white;
+	background: rgb(14, 24, 37);
 }
 /* set padding and size of th form */
 .form-container{
