@@ -43,6 +43,12 @@ $Beds = "1";
 $BedType = "Double";
 $user = "pasananuththara19@gmail.com";
 
+//Variables for the html page
+$RoomID;
+$Price;
+$status; // Success or not
+
+
 // Connecting to the database
 $con = mysqli_connect($host, $userdb, $pswdb, $db);
 
@@ -59,17 +65,17 @@ if ($con) {
         // Get the number of rooms matching (Rows Count)
         $countMatchingRooms = mysqli_num_rows($QRYmatchingRooms);
 
-        echo "$countMatchingRooms"; // Just to debug;
+     //   echo "$countMatchingRooms"; // Just to debug;
 
         // if the number of rows are larger than 0 (Means available)
         if ($countMatchingRooms > 0) {
-            echo " Rooms Available"; // Debug
+         //   echo " Rooms Available"; // Debug
             // Get the room IDS
 
             for ($r = 0; $r < $countMatchingRooms; $r++) {
                 $fetchedData  = mysqli_fetch_array($QRYmatchingRooms);
 
-                echo "<br /> Available Room ID " . $fetchedData['RoomID']; // To debug
+                //echo "<br /> Available Room ID " . $fetchedData['RoomID']; // To debug
 
                 // Check the available room for reserved status
                 $reserveCheck = "SELECT * FROM Reservations WHERE RoomID = " . $fetchedData['RoomID'];
@@ -81,7 +87,7 @@ if ($con) {
                     // It is reserved 
 
                     if ($fetchReserved == null) {
-                        echo " Is Fully Available";
+                      //  echo " Is Fully Available";
                         // If it is fully available Book it. 
                         
                         $bookIt = "INSERT INTO Reservations VALUES('".$fetchedData['RoomID']."', '$user', '$CheckInDate', '$CheckOutDate', '$Adults', '$Children')";
@@ -89,13 +95,15 @@ if ($con) {
 
                         if($QryBookNow){ // IF success
                             // Booking Success
-                            echo "<br>Successfully Booked Room ". $fetchedData['RoomID'];
+                            $status = "<br>Successfully Booked Room ". $fetchedData['RoomID'];
+                            $RoomID = $fetchedData['RoomID'];
+
                         }
                     break;
                     }
                     else{
                         // If it is not fully available, Check for the dates 
-                        echo " (Indexed in Reserved)";
+                        //echo " (Indexed in Reserved)";
                         
                         // Select the room Id whichs CheckOutDate is <  NewCheckInDate And CheckInDate <  newCheckOutDate (If the room is booked by multiple)
 
@@ -109,7 +117,12 @@ if ($con) {
 
                             // If the Count is larger than 0, That means, the room is available.
                             if($CountAvalableByDate > 0)
-                                echo "Room is available for your time period"; // Debug
+                            {
+                                $status = "<br>Successfully Booked Room ". $fetchedData['RoomID'];
+                                $RoomID = $fetchedData['RoomID'];
+                            break;
+                            }
+
                         }
 
                     }
@@ -117,6 +130,85 @@ if ($con) {
             }
         } else {
             // Rooms Not Available
+            $status = "No Rooms Available";
         }
     }
 }
+?>
+
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="css/BookConfirm.css">
+</head>
+<body>
+    <h1 class="Title" align="center">Booking Confirmation</h1>
+
+    <p align = "center" id="BState"><?PHP echo "$status" ?></p>
+<div ID="BookingDetails" class="DetailsV">
+    <table align = "center">
+        <tr>
+            <th>
+                User
+            </th>
+            <th>
+                RoomID
+            </th>
+            <th>
+                CheckIn
+            </th>
+            <th>
+                CheckOut
+            </th>
+            <th>
+                Room Type
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <?PHP echo "$user" ?>
+            </td>
+            <td>
+                <?PHP echo "$RoomID" ?>
+            </td>
+            <td>
+                <?PHP echo "$CheckInDate" ?>
+            </td>
+            <td>
+                <?PHP echo "$CheckOutDate" ?>
+            </td>
+            <td>
+                <?PHP echo "$Type" ?>
+            </td>
+            <td>
+                <?PHP echo getIfSet($Price) ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <a href="index.html"> <button class="btn_home" value="Done" >Back Home</button></a>
+            </td>
+        </tr>
+    </table>
+
+    <p align = "center" id="Des">To Change your Booking Details Contact Send a Email to booking@sol.hotel.com</p>
+    <p align = "center" id="Messages" >Thank You</p>
+
+    </div>
+
+    <script>
+        var details = document.getElementById("BState");
+        var visibility = document.getElementsByClassName("DetailsV")[0];
+
+        
+
+    </script>
+</body>
+</html>
