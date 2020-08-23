@@ -176,16 +176,16 @@ if ($con) {
                 <?PHP echo "$user" ?>
             </td>
             <td>
-                <?PHP echo "$RoomID" ?>
+                <?PHP echo getIfSet($RoomID) ?>
             </td>
             <td>
-                <?PHP echo "$CheckInDate" ?>
+                <?PHP echo getIfSet($CheckInDate) ?>
             </td>
             <td>
-                <?PHP echo "$CheckOutDate" ?>
+                <?PHP echo getIfSet($CheckOutDate) ?>
             </td>
             <td>
-                <?PHP echo "$Type" ?>
+                <?PHP echo getIfSet($Type) ?>
             </td>
             <td>
                 <?PHP echo getIfSet($Price) ?>
@@ -207,7 +207,7 @@ if ($con) {
         var details = document.getElementById("BState");
         var visibility = document.getElementsByClassName("DetailsV")[0];
 
-        
+        if
 
     </script>
 </body>
