@@ -86,7 +86,7 @@ body {
 /*--- About Us --*/
 
 .fixed {
-    background-image: url(img/yang-wewe-2tMsO8smcug-unsplash.jpg);
+    background-image: url(img/yang-wewe-MTU38sVcNtM-unsplash.jpg);
     z-index: -1;
 }
 
@@ -103,10 +103,22 @@ body {
 .fixed-background p {
     margin-top: 1.5rem;
 }
+#heading1 {
+  padding-top: 15rem;
+}
+.heading-underline {
+  background-color: white;
+}
+#para1 {
+  padding-bottom: 15rem;
+}
+
+/* End About Us */
 
 /* Facilities */
+
 #fixed2 {
-    background-image: url(img/hotel-1979406_1920.jpg);
+    background-image: url(img//bed-4416515_1920.jpg);
     z-index: -1;
 }
 #facbtn-md {
@@ -116,9 +128,16 @@ body {
     font-size: 1.1rem;
 }
 
+#card {
+  color: white;
+  background-color: rgb(154, 115, 76);
+  border-radius: 2.5rem;
+}
+
 /* End Facilities */
 
 /* Photogallery */
+
 #fixed3 {
   background-image: url(img/victoria-priessnitz--JZFAKFaF7M-unsplash.jpg);
   z-index: -1;
@@ -271,6 +290,9 @@ body {
   width:34px;
   font-size:14px
 }
+#facebook {
+  background-image: url(img/iconfinder_BW_Facebook_2_glyph_svg_5305153.png);
+}
 .social-icons a.facebook:hover
 {
   background-color:#3b5998
@@ -295,8 +317,7 @@ body {
     margin-right:0;
     font-weight:600
   }
-
-=======
+}
 
 @media only screen and (max-width: 700px) {
     .navbar {
