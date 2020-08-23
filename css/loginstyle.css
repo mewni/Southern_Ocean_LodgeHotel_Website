@@ -18,16 +18,13 @@ form{
 	border-radius: 10px;
 	padding: 30px;
 }
-/* Submit Button */
+/* Login Button */
 .btn-sm {
       color: rgb(154, 115, 76);
       border-width: medium;
       border-radius: 2.5rem;
       padding: .6rem 1.3rem;
-      font-size: 1.1rem;     
-}
-.btn-outline-light {
-      
+      font-size: 1.1rem;  
 }
 
 #hotelname {
