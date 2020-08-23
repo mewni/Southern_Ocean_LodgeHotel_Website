@@ -109,6 +109,12 @@ body {
     background-image: url(img/hotel-1979406_1920.jpg);
     z-index: -1;
 }
+#facbtn-md {
+    border-width: medium;
+    border-radius: 2.5rem;
+    padding: .6rem 1.3rem;
+    font-size: 1.1rem;
+}
 
 /* End Facilities */
 
@@ -116,6 +122,12 @@ body {
 #fixed3 {
   background-image: url(img/victoria-priessnitz--JZFAKFaF7M-unsplash.jpg);
   z-index: -1;
+}
+#galbtn-md {
+  border-width: medium;
+    border-radius: 2.5rem;
+    padding: .6rem 1.3rem;
+    font-size: 1.1rem;
 }
 
 /* End Photogalley*/
