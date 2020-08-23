@@ -133,6 +133,12 @@ body {
   background-color: rgb(154, 115, 76);
   border-radius: 2.5rem;
 }
+#heading2 {
+  padding-top: 5rem;
+}
+#padding {
+  padding-bottom: 5rem;
+}
 
 /* End Facilities */
 
@@ -147,6 +153,9 @@ body {
     border-radius: 2.5rem;
     padding: .6rem 1.3rem;
     font-size: 1.1rem;
+}
+#heading3 {
+  padding-top: 5rem;
 }
 
 /* End Photogalley*/
