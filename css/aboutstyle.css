@@ -11,7 +11,7 @@ body {
 /*--- Navigation --*/
 .navbar {
       text-transform: uppercase;
-      font-weight: 550;
+      font-weight: 500;
       font-size: .9rem;
       letter-spacing: .1rem;
       background-color: rgb(154, 115, 76)!important; 
