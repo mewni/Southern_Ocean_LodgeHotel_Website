@@ -17,6 +17,9 @@ body {
     /* background-color: rgba(0, 0, 0, 0.041)!important; */
     background: linear-gradient(#000000a4, #00000027)!important;
 }
+.nav-item {
+    cursor: pointer;
+}
 
 .navbar-brand img {
     height: 2rem;
