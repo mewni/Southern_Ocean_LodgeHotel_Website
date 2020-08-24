@@ -145,7 +145,8 @@ if ($con) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Confirmation</title>
-    <link rel="stylesheet" href="css/confirmation.css">
+    <link rel="stylesheet" href="css/BookConfirm.css">
+
 </head>
 <body>
     <h1 class="Title" align="center">Booking Confirmation</h1>

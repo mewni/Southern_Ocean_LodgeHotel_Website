@@ -130,7 +130,6 @@ body {
     padding: .6rem 1.3rem;
     font-size: 1.1rem;
 }
-
 #card {
   color: white;
   background-color: rgb(154, 115, 76);
@@ -138,9 +137,6 @@ body {
 }
 #heading2 {
   padding-top: 5rem;
-}
-#padding {
-  padding-bottom: 5rem;
 }
 
 /* End Facilities */
@@ -153,9 +149,15 @@ body {
 }
 #galbtn-md {
   border-width: medium;
-    border-radius: 2.5rem;
-    padding: .6rem 1.3rem;
-    font-size: 1.1rem;
+  border-radius: 2.5rem;
+  padding: .6rem 1.3rem;
+  font-size: 1.1rem;
+}
+#heading3 {
+  padding-top: 4rem;
+}
+#bottom {
+  padding-bottom: 5rem;
 }
 #heading3 {
   padding-top: 5rem;
