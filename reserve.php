@@ -174,4 +174,84 @@ if ($con) {
 
     }
 }
+
 ?>
+
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="css/BookConfirm.css">
+
+</head>
+<body>
+    <h1 class="Title" align="center">Booking Confirmation</h1>
+
+    <p align = "center" id="BState"><?PHP echo "$status" ?></p>
+<div ID="BookingDetails" class="DetailsV">
+    <table align = "center">
+        <tr>
+            <th>
+                User
+            </th>
+            <th>
+                RoomID
+            </th>
+            <th>
+                CheckIn
+            </th>
+            <th>
+                CheckOut
+            </th>
+            <th>
+                Room Type
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <?PHP echo "$user" ?>
+            </td>
+            <td>
+                <?PHP echo getIfSet($RoomID) ?>
+            </td>
+            <td>
+                <?PHP echo getIfSet($CheckInDate) ?>
+            </td>
+            <td>
+                <?PHP echo getIfSet($CheckOutDate) ?>
+            </td>
+            <td>
+                <?PHP echo getIfSet($Type) ?>
+            </td>
+            <td>
+                <?PHP echo getIfSet($Price) ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <a href="index.html"> <button class="btn_home" value="Done" >Back Home</button></a>
+            </td>
+        </tr>
+    </table>
+
+    <p align = "center" id="Des">To Change your Booking Details Contact Send a Email to booking@sol.hotel.com</p>
+    <p align = "center" id="Messages" >Thank You</p>
+
+    </div>
+
+    <script>
+        var details = document.getElementById("BState");
+        var visibility = document.getElementsByClassName("DetailsV")[0];
+
+        if
+
+    </script>
+</body>
+</html>
+
