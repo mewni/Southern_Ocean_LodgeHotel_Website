@@ -35,11 +35,13 @@ if(md5($retrievedPassword) == $userPassword && $retrievedUserName == $userUserNa
     session_start();
     $_SESSION["userName"] = $userUserName;
     header("Location:index.html");
+
 }
 else{
     #Login Unsuccessfull
     echo "Login Unsuccessfull";
-    header("Location:index.html");
+    header("Location:login.php?mes=❌ Username Or Password Incorrect");
+
 }
 
 ?>

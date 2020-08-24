@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();//start the session
-
+$sessionExp = 15;
 //this function is to get the value if it is pre setted
 //I created this code snipped to reduce time to type if(isset()) Everywhere.
 function getifSet(&$value, $default = null)
@@ -20,7 +20,7 @@ if(isset($_SESSION['Last_Activity']))
     }
 }
 
-
+$message = getifSet($_REQUEST['mes']);
 //set the username to a variable if it is set.
 $userName = getIfSet($_SESSION['userName']);
 $_SESSION['Last_Activity'] = time();
@@ -54,7 +54,7 @@ $_SESSION['Last_Activity'] = time();
                     <div class="form-group form-outline-light">
                         <h4 class="text-center font-weight-bold" id="hotelname"> Southern Ocean Lodge </h4>
                         <h4 class="text-center font-weight-bold"> Login </h4>
-
+                        <p><?PHP echo "$message" ?></p>
                         <label for="InputEmail">Email Address</label>
                         <input oninput="emailChange();" name="email" type="email" class="form-control" id="InputEmail" aria-describeby="emailHelp" placeholder="Enter email">
                     </div>
@@ -62,9 +62,9 @@ $_SESSION['Last_Activity'] = time();
                         <label for="txtpsw">Password</label>
                         <input name="psw" type="password" class="form-control" id="txtpsw" placeholder="Password">
                     </div>
-                    <button type="submit" class=" btn btn-outline-light btn-sm">Login</button>
+                    <button type="submit" class=" btn btn-outline-light btn-sm w-100">Login</button>
                     <div class="form-footer">
-                        <p> Don't have an account? <a href="#">Sign Up</a></p>
+                        <p> Don't have an account? <a href="signup.php">Sign Up</a></p>
                     </div>
                 </form>
 
@@ -74,7 +74,23 @@ $_SESSION['Last_Activity'] = time();
     <!-- Login form creation ends -->
 
     <!-- The script below Checks whether it is on a session and it automatically fills the user email -->
-    <script src="js/loginScript.js"></script>
+    <script>
+        var preset = "<?php echo $userName ?>";
+        var txtEmail = document.getElementById("InputEmail");   
+        if (preset != null) {
+            txtEmail.value = preset;
+            txtEmail.style.backgroundColor = "#ffffcc";
+            document.getElementById("txtpsw").focus();
+        }
+
+        if (txtEmail.value == "") {
+             txtEmail.style.backgroundColor = "#ffffff";
+        }
+
+        function emailChange() {
+            txtEmail.style.backgroundColor = "#ffffff";
+        }
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

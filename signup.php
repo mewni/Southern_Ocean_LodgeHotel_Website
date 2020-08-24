@@ -82,7 +82,7 @@
         <!-- row and justify-content-center class is used to place the form in center -->
         <section class="row justify-content-center">
             <section class="col-12 col-sm-6 col-md-4">
-                <form id="signup" class="form-container" action="signupsr.php" method="POST">
+                <form id="signup" class="form-container" action="signupsr.php" onsubmit="return validate();" method="POST">
                     <div class="form-group form-outline-light">
                         <h4 class="text-center font-weight-bold" id="hotelname"> Southern Ocean Lodge </h4>
                         <h4 class="text-center font-weight-bold"> Create Account </h4>
@@ -110,7 +110,7 @@
                         <p id="error-text"></p>
                     </div>
 
-                    <button type="submit" class=" btn btn-outline-light btn-sm">Sign Up</button>
+                    <button type="submit" class=" btn btn-outline-light btn-sm w-100">Sign Up</button>
                     <div class="form-footer">
                         <p>By Clicking the SignUp button, you agree to our Trems & Conditions, and Privacy Policy</p>
 
@@ -121,6 +121,18 @@
     </section>
     <!-- Login form creation ends -->
     <!-- Commit -->
+
+    <script>
+        function validate(){
+            var psw = document.getElementById("InputPassword");
+            var conPsw = document.getElementById("ConfirmPassword");
+
+            if(psw.value != conPsw.value){
+                alert("Passwords Don't Match");
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>
