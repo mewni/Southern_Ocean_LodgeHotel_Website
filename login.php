@@ -64,7 +64,7 @@ $_SESSION['Last_Activity'] = time();
                     </div>
                     <button type="submit" class=" btn btn-outline-light btn-sm">Login</button>
                     <div class="form-footer">
-                        <p> Don't have an account? <a href="#">Sign Up</a></p>
+                        <p> Don't have an account? <a href="signup.html">Sign Up</a></p>
                     </div>
                 </form>
 

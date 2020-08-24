@@ -24,11 +24,13 @@ form{
       border-width: medium;
       border-radius: 2.5rem;
       padding: .6rem 1.3rem;
-      font-size: 1.1rem;  
+      font-size: 1.1rem; 
+      margin-left: 10rem;
+      margin-right: 10rem;
 }
 
 #hotelname {
-      color: rgb(154, 115, 76);
+      color: rgb(123, 94, 65);
       font-size: 1.5rem;
       text-transform: none;
       font-family: 'Dancing Script', cursive;
