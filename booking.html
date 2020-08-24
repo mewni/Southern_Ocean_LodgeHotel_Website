@@ -16,53 +16,57 @@
       <!-- row and justify-content-center class is used to place the form in center -->
       <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-4">
-          <form class="form-container" onsubmit="reserve.php">
-          <div class="form-group form-outline-light">
-            <h4 class="text-center font-weight-bold" id="hotelname"> Southern Ocean Lodge </h4>    
-            <h4 class="text-center font-weight-bold"> Book Your Room</h4>
-            
-            <label for="InputCheckIn">Check In</label>
-             <input type="date" class="form-control rounded" id="InputCheckIn" aria-describeby="emailHelp" placeholder="dd/mm/yyyy">
-          </div>
-          <div class="form-group">
-            <label for="InputCheckOut">Check Out</label>  
-            <input type="date" class="form-control rounded" id="InputCheckOut" placeholder="dd/mm/yyyy">
-          </div>
-          <div class="form-group">
-            <label for="InputNoOfAdults">Adults </label>
-            <select name="noofadults" id="noofadults" class="rounded w-100" style="height: 37px;">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-          </div>
-          <div class="form-group" id="borderradius">
-            <label for="InputNoOfChildren">Children</label>
-            <select name="noofchildren" id="noofchildren" class="w-100 rounded" style="height: 37px;">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-          </div>
+          <a href="inroomfacilities.html"><button class="btn rounded w-100" style="background-color: rgb(154, 115, 76);" value="Rooms">Room Details</button></a>
+          <form class="form-container" onsubmit="return validate();" action="reserve.php">
+              <div class="form-group form-outline-light">
+                  <h4 class="text-center font-weight-bold" id="hotelname"> Southern Ocean Lodge </h4>    
+                  <h4 class="text-center font-weight-bold"> Book Your Room</h4>
+                  
+                  <label for="email">Email Address</label>
+                  <input required type="email" class="form-control rounded" id="email" name="email"  >
+                  <label for="InputCheckIn">Check In</label>
+                  <input type="date" class="form-control rounded" id="InputCheckIn" name="InputCheckIn"  >
+              </div>
+              <div class="form-group">
+                  <label for="InputCheckOut">Check Out</label>  
+                  <input type="date" class="form-control rounded" id="InputCheckOut" name="InputCheckOut" >
+              </div>
+              <div class="form-group">
+                  <label for="InputNoOfAdults">Adults </label>
+                  <select name="noofadults" id="noofadults" class="rounded w-100" style="height: 37px;">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+              </div>
+              <div class="form-group" id="borderradius">
+                  <label for="InputNoOfChildren">Children</label>
+                  <select name="noofchildren" id="noofchildren" class="w-100 rounded" style="height: 37px;">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+              </div>
 
           <div class="form-group">
             <label for="SelectRoomType">Room Type</label>
-            <select name="roomtypes" id="roomtypes" class="w-100 rounded" style="height: 37px;">
+            <select onchange="updaterooms();" name="roomtypes" id="roomtypes" class="w-100 rounded" style="height: 37px;">
                   <option value="Select">select</option>
                   <option value="Standard">Standard</option>
                   <option value="Superior">Superior</option>
                   <option value="SuperiorDeluxe">Superior Deluxe</option>
                   <option value="Executive">Executive</option>
-                  <option value="FamilyRooms">Family Rooms</option>
+                  <option value="FamilyRoom">Family Rooms</option>
                   <option value="JuniorSuites">Junior Suites</option>
  
                 </select>
           </div>
           <div class="form-group" id="borderradius">
             <label for="bedtype">Bed Type</label>
-            <select name="bedtype" id="bedtype" class="w-100 rounded" style="height: 37px;">
+            <select onchange="beds();" name="bedtype" id="bedtype" class="w-100 rounded" style="height: 37px;">
+                  <option value="Select">Select</option>
                   <option value="Single">Single</option>
                   <option value="Double">Double</option>
                 </select>
@@ -71,10 +75,9 @@
           <div class="form-group" id="borderradius">
             <label for="InputNoOfBeds">Number Of Beds</label>
             <select name="noofBeds" id="noofBeds" class="w-100 rounded" style="height: 37px;">
+                  
                   <option value="1">1</option>
-                  <option value="2">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
+                  <option value="1">2</option>
                 </select>
               </div>
           
@@ -85,6 +88,77 @@
       </section>
     </section>
   <!-- Booking form creation ends -->
+
+  <script>
+    function validate(){
+
+      var checkIN = document.getElementById("InputCheckIn");
+      var checkOUT = document.getElementById("InputCheckOut");
+      var RoomType = document.getElementById("roomtypes");      
+      var bedType = document.getElementById("bedtype");
+
+      if(checkIN.value == "" || checkOUT.value == "")
+      {
+          alert("Please enter the Check in and Checkout");
+          return false;
+      }
+
+      if(RoomType.value == "Select"){
+
+          alert("Please select a room type");
+          return false;
+
+      }
+      if(bedType.value == "Select"){
+
+          alert("Please select a Bed type");
+          return false;
+
+      }
+    }
+
+    function updaterooms(){
+      var RoomType = document.getElementById("roomtypes");
+      var bedType = document.getElementById("bedtype");
+      var bedNum = document.getElementById("noofBeds");
+      var option = document.createElement("option");
+
+      if(RoomType.value == "Standard")
+      {
+        bedNum.remove(2);
+      }
+      if(RoomType.value == "Superior")
+      {
+        bedNum.remove(2);
+      }
+      if(RoomType.value == "SuperiorDeluxe")
+      {
+        bedNum.remove(2);
+      }
+      if(RoomType.value == "Executive")
+      {
+        bedNum.remove(2);
+      }
+      if(RoomType.value == "FamilyRoom")
+      {
+        bedNum.selectedIndex = "2";
+        if(bedNum.length<3)
+        {
+          option.text = "3";
+          option.value = "3";
+          bedNum.add(option);
+          
+        }
+      }
+      if(RoomType.value == "JuniorSuites")
+      {
+        bedNum.remove(2);
+      }
+
+    }
+
+  </script>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

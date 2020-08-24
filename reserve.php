@@ -24,7 +24,9 @@
 $user = getIfSet($_SESSION['userName']);
 $_SESSION['Last_Activity'] = time();
 
-
+if($user != null){
+    header("location:login.php?Please%20Login%20to%20Continue");
+}
 
 //get the checking date from the form
 //get the checkout date from the form 
@@ -60,6 +62,7 @@ $pswdb = "";
 $db = "hoteldb";
 
 //variables
+$user = getIfSet($_REQUEST['email']);
 $CheckInDate = getIfSet($_REQUEST['InputCheckIn']);
 $CheckOutDate = getIfSet($_REQUEST['InputCheckOut']);
 $Adults = getIfSet($_REQUEST['noofadults']);
@@ -67,6 +70,7 @@ $Children = getIfSet($_REQUEST['noofchildren']);
 $Type = getIfSet($_REQUEST['roomtypes']);
 $Beds = getIfSet($_REQUEST['noofBeds']);
 $BedType = getIfSet($_REQUEST['bedtype']);
+
 
 //Variables for the html page
 $RoomID;
@@ -122,8 +126,9 @@ if ($con) {
                             // Booking Success
                             $status = "<br>Successfully Booked Room " . $fetchedData['RoomID'];
                             $RoomID = $fetchedData['RoomID'];
+                            break;
                         }
-                        break;
+                        
                     } else {
                         // If it is not fully available, Check for the dates 
                         //echo " (Indexed in Reserved)";
@@ -140,9 +145,19 @@ if ($con) {
 
                             // If the Count is larger than 0, That means, the room is available.
                             if ($CountAvalableByDate > 0) {
-                                $status = "<br>Successfully Booked Room " . $fetchedData['RoomID'];
-                                $RoomID = $fetchedData['RoomID'];
-                                break;
+                                $bookIt = "INSERT INTO Reservations VALUES('" . $fetchedData['RoomID'] . "', '$user', '$CheckInDate', '$CheckOutDate', '$Adults', '$Children')";
+                                $QryBookNow = mysqli_query($con, $bookIt); // initialize the quary
+        
+                                if ($QryBookNow) { // IF success
+                                    // Booking Success
+                                    $status = "<br>Successfully Booked Room " . $fetchedData['RoomID'];
+                                    $RoomID = $fetchedData['RoomID'];
+                                    break;
+                                }
+                                
+                            }
+                            else{
+                                $status = "No Rooms Available";
                             }
                         }
                     }
@@ -167,7 +182,6 @@ if ($con) {
                         <th> CheckIn </th> 
                         <th> CheckOut </th>
                         <th> Room Type </th>
-                        <th>Price </th> 
                     </tr>
                     <tr>
                         <td>".getIfSet($user)."</td>
@@ -175,14 +189,14 @@ if ($con) {
                         <td>".getIfSet($CheckInDate)."</td>
                         <td>".getIfSet($CheckOutDate)."</td>
                         <td>".getIfSet($Type)."</td>
-                        <td>".getIfSet($Price)."</td>
                     </tr>
                     <tr> 
-                        <td colspan='6'> <a href='index.html'> <button class='btn_home' value='Done'>Back Home</button></a></td>
+                        <td colspan='6'> </td>
                     </tr>
                 </table>
-                <p align='center' id='Des'>To Change your Booking Details Contact Send a Email to booking@sol.hotel.com</p>
-                <p align='center' id='Messages'>Thank You</p></div>";
+                <p align='center' id='Des'>Please give your email to the from desk when you arrived. You have to pay the amount on that time. To Change your Booking Details Contact Send a Email to booking@sol.hotel.com</p>
+                <p align='center' id='Messages'>Thank You</p></div>
+                <a href='index.html'> <button class='btn_home' value='Done'>Back Home</button></a>";
     }
     else{
         echo "
@@ -200,3 +214,8 @@ if ($con) {
 
 ?>
 
+<html>
+    <head>
+        <link rel="stylesheet" href="css/bookConfirm.css">
+    </head>
+</html>
