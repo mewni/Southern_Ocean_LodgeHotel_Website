@@ -21,7 +21,7 @@
 
 
 //set the username to a variable if it is set.
-$userName = getIfSet($_SESSION['userName']);
+$user = getIfSet($_SESSION['userName']);
 $_SESSION['Last_Activity'] = time();
 
 
@@ -69,7 +69,6 @@ $Children = getIfSet($_REQUEST['children']);
 $Type = getIfSet($_REQUEST['Rtype']);
 $Beds = getIfSet($_REQUEST['beds']);
 $BedType = getIfSet($_REQUEST['bedT']);
-$user = getIfSet($_REQUEST['user']);
 
 //Variables for the html page
 $RoomID;
