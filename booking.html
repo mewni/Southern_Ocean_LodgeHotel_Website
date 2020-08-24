@@ -16,7 +16,7 @@
       <!-- row and justify-content-center class is used to place the form in center -->
       <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-4">
-          <form class="form-container" onsubmit="reserve.php">
+          <form class="form-container" onsubmit="return validate();" method="POST" action="reserve.php">
           <div class="form-group form-outline-light">
             <h4 class="text-center font-weight-bold" id="hotelname"> Southern Ocean Lodge </h4>    
             <h4 class="text-center font-weight-bold"> Book Your Room</h4>
@@ -46,19 +46,9 @@
                   <option value="3">3</option>
                 </select>
           </div>
-          <div class="form-group" id="borderradius">
-            <label for="InputNoOfBeds">Number Of Beds</label>
-            <select name="noofBeds" id="noofBeds" class="w-100 rounded" style="height: 37px;">
-                  <option value="1">1 (Single Bed)</option>
-                  <option value="1.2">1 (Double Bed)</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </div>
           <div class="form-group">
             <label for="SelectRoomType">Room Type</label>
-            <select name="roomtypes" id="roomtypes" class="w-100 rounded" style="height: 37px;">
+            <select name="roomtypes" id="roomtypes" class="w-100 rounded" style="height: 37px;" onchange="roomch();">
                   <option value="Select">select</option>
                   <option value="Standard">Standard</option>
                   <option value="Superior">Superior</option>
@@ -69,6 +59,25 @@
  
                 </select>
           </div>
+          <div class="form-group" id="borderradius">
+            <label for="bedtype">Bed Type</label>
+            <select name="bedtype" id="bedtype" class="w-100 rounded" style="height: 37px;">
+                  <option value="Single">Single</option>
+                  <option value="Double">Double</option>
+                </select>
+              </div>
+          <div class="form-group">
+          <div class="form-group" id="borderradius">
+            <label for="InputNoOfBeds">Number Of Beds</label>
+            <select name="noofBeds" id="noofBeds" class="w-100 rounded" style="height: 37px;">
+                  <option value="1">1</option>
+                  <option value="1.2">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+          
 
           <button type="submit" class=" btn btn-outline-light btn-sm">Book Now</button>
           </form>
@@ -76,6 +85,27 @@
       </section>
     </section>
   <!-- Booking form creation ends -->
+
+<script>
+
+  function validate(){
+  var form = document.getElementById("LoginForm");
+  var RType = document.getElementById("roomtypes");
+
+  if(RType.value == "Select")
+  {
+    alert("Please select a room type");
+    return false;
+
+  }
+  }
+
+  function roomch(){
+    var 
+  }
+  //alert("message");
+
+</script>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

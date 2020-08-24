@@ -62,13 +62,13 @@ $db = "hoteldb";
 //variables
 $firstName = getIfSet($_REQUEST['fname']);
 $lastName = getIfSet($_REQUEST['lname']);
-$CheckInDate = getIfSet($_REQUEST['checkindate']);
-$CheckOutDate = getIfSet($_REQUEST['checkoutdate']);
-$Adults = getIfSet($_REQUEST['adults'];);
-$Children = getIfSet($_REQUEST['children']);
-$Type = getIfSet($_REQUEST['Rtype']);
-$Beds = getIfSet($_REQUEST['beds']);
-$BedType = getIfSet($_REQUEST['bedT']);
+$CheckInDate = getIfSet($_REQUEST['InputCheckIn']);
+$CheckOutDate = getIfSet($_REQUEST['InputCheckOut']);
+$Adults = getIfSet($_REQUEST['noofadults']);
+$Children = getIfSet($_REQUEST['coofchildren']);
+$Type = getIfSet($_REQUEST['roomtypes']);
+$Beds = getIfSet($_REQUEST['noofbeds']);
+$BedType = getIfSet($_REQUEST['bedtype']);
 
 //Variables for the html page
 $RoomID;
@@ -199,4 +199,10 @@ if ($con) {
 
     }
 }
+<<<<<<< Updated upstream
 ?>
+=======
+
+?>
+
+>>>>>>> Stashed changes

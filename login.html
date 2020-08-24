@@ -12,13 +12,15 @@ function getifSet(&$value, $default = null)
 if(isset($_SESSION['Last_Activity']))
 {
     $inactiveSeconds = time() - $_SESSION['Last_Activity'];
-    $sessionExpSec = $sessionExp * 60;
+    $sessionExpSec = getIfSet($sessionExp) * 60;
 
     if($inactiveSeconds >= $sessionExpSec){
         session_unset();
         session_destroy();
     }
 }
+
+$message = getIfSet($_REQUEST['mes']);
 
 
 //set the username to a variable if it is set.
@@ -49,12 +51,12 @@ $_SESSION['Last_Activity'] = time();
         <!-- row and justify-content-center class is used to place the form in center -->
         <section class="row justify-content-center">
             <section class="col-12 col-sm-6 col-md-4">
-
+        
                 <form class="form-container" action="loginsr.php" method="POST">
                     <div class="form-group form-outline-light">
                         <h4 class="text-center font-weight-bold" id="hotelname"> Southern Ocean Lodge </h4>
                         <h4 class="text-center font-weight-bold"> Login </h4>
-
+                        <p><?PHP echo $message ?></p>
                         <label for="InputEmail">Email Address</label>
                         <input oninput="emailChange();" name="email" type="email" class="form-control" id="InputEmail" aria-describeby="emailHelp" placeholder="Enter email">
                     </div>
@@ -74,7 +76,23 @@ $_SESSION['Last_Activity'] = time();
     <!-- Login form creation ends -->
 
     <!-- The script below Checks whether it is on a session and it automatically fills the user email -->
-    <script src="js/loginScript.js"></script>
+    <script>
+         var preset = "<?php echo getIfSet($userName) ?>";
+         var txtEmail = document.getElementById("InputEmail");      
+            if (preset != null) {
+                txtEmail.value = preset;
+                txtEmail.style.backgroundColor = "#ffffcc";
+                document.getElementById("txtpsw").focus();
+            }
+
+            if (txtEmail.value == "") {
+                txtEmail.style.backgroundColor = "#ffffff";
+            }
+
+            function emailChange() {
+                txtEmail.style.backgroundColor = "#ffffff";
+            }
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
