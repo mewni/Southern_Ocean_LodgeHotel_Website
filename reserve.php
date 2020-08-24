@@ -1,5 +1,31 @@
 <?PHP
 
+    session_start();
+
+    //---- Session handling ------//
+
+    // maximim sesion time in min
+    $sessionExp = 15;
+
+
+    if(isset($_SESSION['Last_Activity'])){
+
+        $inactiveSeconds = time() - $_SESSION['Last_Activity'];
+        $sessionExpSec = $sessionExp * 60;
+
+    if($inactiveSeconds >= $sessionExpSec){
+        session_unset();
+        session_destroy();
+    }
+}
+
+
+//set the username to a variable if it is set.
+$userName = getIfSet($_SESSION['userName']);
+$_SESSION['Last_Activity'] = time();
+
+
+
 //get the checking date from the form
 //get the checkout date from the form 
 //get the number of adults
@@ -36,14 +62,14 @@ $db = "hoteldb";
 //variables
 $firstName = getIfSet($_REQUEST['fname']);
 $lastName = getIfSet($_REQUEST['lname']);
-$CheckInDate = "2020-09-12";
-$CheckOutDate = "2020-09-14";
-$Adults = "1";
-$Children = "1";
-$Type = "JuniorSuites";
-$Beds = "1";
-$BedType = "Double";
-$user = "pasananuththara19@gmail.com";
+$CheckInDate = getIfSet($_REQUEST['checkindate']);
+$CheckOutDate = getIfSet($_REQUEST['checkoutdate']);
+$Adults = getIfSet($_REQUEST['adults'];);
+$Children = getIfSet($_REQUEST['children']);
+$Type = getIfSet($_REQUEST['Rtype']);
+$Beds = getIfSet($_REQUEST['beds']);
+$BedType = getIfSet($_REQUEST['bedT']);
+$user = getIfSet($_REQUEST['user']);
 
 //Variables for the html page
 $RoomID;
